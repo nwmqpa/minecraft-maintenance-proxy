@@ -27,8 +27,8 @@ After=network.target
 
 [Service]
 Type=simple
-User=nobody
-Group=nogroup
+User=root
+Group=root
 ExecStart={executable_location} proxy --socket {socket} --server-address {server_address} --server-port {server_port} --proxy-address {proxy_address} --proxy-port {proxy_port}
 
 [Install]
