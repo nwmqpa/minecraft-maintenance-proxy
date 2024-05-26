@@ -1,0 +1,21 @@
+[package]
+name = "minecraft-maintenance-proxy"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.86"
+base64 = "0.22.1"
+bytes = "1.6.0"
+clap = { version = "4.5.4", features = ["derive"] }
+nom = "7.1.3"
+rust-embed = "8.4.0"
+serde = { version = "1.0.202", features = ["derive"] }
+serde_json = "1.0.117"
+srv-rs = "0.2.0"
+tokio = { version = "1.37.0", features = ["full"] }
+tokio-stream = "0.1.15"
+tokio-util = { version = "0.7.11", features = ["io"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+nix = "0.29.0"
