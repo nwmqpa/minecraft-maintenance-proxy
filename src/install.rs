@@ -1,4 +1,5 @@
 use crate::args;
+use anyhow::Context;
 
 #[cfg(target_os = "linux")]
 pub(crate) fn install_systemd_service(args: &args::InstallCommandArgs) -> anyhow::Result<()> {
@@ -57,6 +58,7 @@ WantedBy=multi-user.target
         .args(&["start", &unit_file_name])
         .status()?;
 
+    Ok(())
 }
 
 #[cfg(target_os = "windows")]
